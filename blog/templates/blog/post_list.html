@@ -4,19 +4,14 @@
     </head>
     <body>
         <div>
-            <h1><a href='page1'>Jeehoon's Blog</a></h1>
+            <h1><a href='/'>Jeehoon's Blog</a></h1>
         </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a herf="page2">My first post</a></h2>
-            <p>Aenesfjnskanfknksnflknldsknfklsfnlkaslknflsndflkn</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a herf='page3'>My second post</a></h2>
-            <p>sfsdfsadgasgsafdfasfsggsadfsfasfsdfsfs</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a herf="/">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
